@@ -10,7 +10,7 @@ set -e
 
 # Check if phpcbf is available.
 if ! command -v phpcbf >/dev/null 2>&1; then
-  echo "The phpcbf command cannot be found."
+  echo "The phpcbf command cannot be found. Please see the README.md of this add-on for more information."
   exit 1
 fi
 
