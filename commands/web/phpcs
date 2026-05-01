@@ -14,9 +14,4 @@ if ! command -v phpcs >/dev/null 2>&1; then
   exit 1
 fi
 
-# Environment specific variables are set in .ddev/.env.phpcs.
-phpcs --config-set default_standard "$PHPCS_DEFAULT_STANDARDS" &> /dev/null
-phpcs --config-set extensions "$PHPCS_EXTENSIONS" &> /dev/null
-phpcs --config-set ignore_patterns "$PHPCS_IGNORE_PATTERN" &> /dev/null
-
 phpcs $@
