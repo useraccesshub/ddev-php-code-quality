@@ -1,0 +1,17 @@
+#/usr/bin/env bash
+#ddev-generated
+
+## Description: This is a wrapper for the app's phpstan command.
+## Usage: phpstan
+## Example: ddev phpstan
+
+# See 'set --help' for more information.
+set -e
+
+# Check if phpstan is available.
+if ! command -v phpstan >/dev/null 2>&1; then
+  echo "The phpstan command cannot be found."
+  exit 1
+fi
+
+phpstan $@

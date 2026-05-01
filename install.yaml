@@ -1,0 +1,6 @@
+name: ddev_phpcq
+
+project_files:
+  - commands/web/phpcbf
+  - commands/web/phpcs
+  - commands/web/phpstan

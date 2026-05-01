@@ -1,0 +1,22 @@
+#/usr/bin/env bash
+#ddev-generated
+
+## Description: This is a wrapper for the app's phpcbf command.
+## Usage: phpcbf
+## Example: ddev phpcbf
+
+# See 'set --help' for more information.
+set -e
+
+# Check if phpcbf is available.
+if ! command -v phpcbf >/dev/null 2>&1; then
+  echo "The phpcbf command cannot be found."
+  exit 1
+fi
+
+# Environment specific variables are set in .ddev/.env.phpcs.
+phpcbf --config-set default_standard "$PHPCS_DEFAULT_STANDARDS" &> /dev/null
+phpcbf --config-set extensions "$PHPCS_EXTENSIONS" &> /dev/null
+phpcbf --config-set ignore_patterns "$PHPCS_IGNORE_PATTERN" &> /dev/null
+
+phpcbf $@
